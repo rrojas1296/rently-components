@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-1: var(--bg-1);
+  --color-bg-2: var(--bg-2);
+
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-text-3: var(--text-3);
+
+  --color-border-1: var(--border-1);
+  --color-border-2: var(--border-2);
+
+  --color-overlay: var(--overlay);
+
+  --color-primary-500: var(--primary-500);
+  --color-primary-400: var(--primary-400);
+
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+
+  --color-bg-success: var(--bg-success);
+  --color-bg-danger: var(--bg-danger);
+  --color-bg-warning: var(--bg-warning);
+
+  --animate-popover-in: popOverIn 0.2s ease-in-out forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes popOverIn {
+  from {
+    opacity: 0;
+    scale: 0.9;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+    transform: translateY(0.5rem);
+  }
+}
