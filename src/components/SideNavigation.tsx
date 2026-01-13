@@ -32,7 +32,7 @@ const SideNavigation = ({
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 inset-0 shrink-0 overflow-hidden z-999 transition-all",
+        "fixed top-0 left-0 inset-0 shrink-0 overflow-y-auto overflow-x-hidden z-999 transition-all",
         open
           ? "pointer-events-auto lg:w-72"
           : "pointer-events-none lg:pointer-events-auto lg:w-21",
@@ -88,14 +88,15 @@ const SideNavigation = ({
                       className={cn(
                         "h-10 w-full group transition-[width] rounded-lg overflow-hidden text-sm text-text-2 px-3 cursor-pointer flex items-center gap-3",
                         "hover:text-text-1 transition-[color]",
-                        isActive && "bg-primary-500 text-text-3",
+                        isActive &&
+                          "bg-primary-500 text-text-3 hover:text-text-3",
                         open ? "w-full" : "w-11",
                       )}
                     >
                       <Icon
                         className={cn(
                           "w-5 h-5 text-text-2 group-hover:text-text-1 transition-colors shrink-0",
-                          isActive && "text-text-3",
+                          isActive && "text-text-3 group-hover:text-text-3",
                         )}
                       />
                       <p

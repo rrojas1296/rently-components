@@ -1,10 +1,12 @@
 import { cn } from "../utils/cn";
 
-type BadgeType = "success" | "error" | "warning";
+export type BadgeType = "success" | "error" | "warning";
+
 interface Props {
   text: string;
   type: BadgeType;
 }
+
 const Badge = ({ text = "Badge", type = "success" }: Props) => {
   const styles: Record<BadgeType, string> = {
     success: "bg-bg-success text-success border-success",
@@ -14,7 +16,7 @@ const Badge = ({ text = "Badge", type = "success" }: Props) => {
   return (
     <div
       className={cn(
-        "text-sm px-3 py-1 rounded-lg border outline-none",
+        "text-sm px-3 w-fit py-1 rounded-lg border outline-none",
         styles[type],
       )}
     >

@@ -27,25 +27,13 @@
   --animate-popover-in: popOverIn 0.2s ease-in-out forwards;
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-1rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
-}
 @keyframes popOverIn {
   from {
     opacity: 0;
     scale: 0.9;
-    transform: translateY(-1rem);
   }
   to {
     opacity: 1;
     scale: 1;
-    transform: translateY(0.5rem);
   }
 }

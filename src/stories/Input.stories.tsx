@@ -38,7 +38,7 @@ export const Default: Story = {
         placeholder="Placeholder"
         containerClassName="w-sm"
         error={error}
-        Icon={Icon && MailIcon}
+        Icon={Icon}
       />
     );
   },

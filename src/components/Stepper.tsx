@@ -1,7 +1,7 @@
-import type { ComponentProps } from "react";
+import { Fragment, type ComponentProps } from "react";
 import { cn } from "../utils/cn";
 
-interface Step {
+export interface Step {
   label: string;
 }
 
@@ -22,8 +22,8 @@ const Stepper = ({
       {steps.map((step, i) => {
         const active = currentStep >= i;
         return (
-          <>
-            <div className="flex flex-col items-center">
+          <Fragment key={i}>
+            <div key={i} className="flex flex-col items-center">
               <button
                 className={cn(
                   "relative w-10 h-10 rounded-lg cursor-pointer bg-bg-1 text-text-2 border border-border-2 font-bold",
@@ -46,7 +46,7 @@ const Stepper = ({
             {i + 1 < steps.length && (
               <div className="h-px w-full bg-border-2" />
             )}
-          </>
+          </Fragment>
         );
       })}
     </div>

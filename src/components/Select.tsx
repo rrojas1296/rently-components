@@ -79,9 +79,10 @@ const SelectContent = ({
       <RadixSelect.Content
         data-slot="select-content"
         className={cn(
-          "rounded-lg z-999 min-w-42 bg-bg-1 border border-border-2 data-[state=open]:animate-popover-in shadow-sm",
+          "rounded-lg z-999 min-w-[var(--radix-select-trigger-width)] bg-bg-1 border border-border-2 data-[state=open]:animate-popover-in shadow-sm",
           className,
         )}
+        sideOffset={8}
         position="popper"
         {...other}
       >
