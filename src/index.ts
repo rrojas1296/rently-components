@@ -5,6 +5,7 @@ export { default as Stepper } from "./components/Stepper";
 export { default as Button } from "./components/Button";
 export { default as Switch } from "./components/Switch";
 export { default as Badge } from "./components/Badge";
+export { default as Calendar } from "./components/Calendar";
 
 export type { BadgeType } from "./components/Badge";
 export type { Step } from "./components/Stepper";

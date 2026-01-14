@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import { memo, type ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils/cn";
 
@@ -33,4 +33,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default memo(Button);
