@@ -3,8 +3,6 @@ import { useMemo, useState } from "react";
 import {
   CAL_MONTHS,
   CAL_YEARS,
-  calendarMonths,
-  calendarYears,
   generateDays,
   WEEK_DAYS,
 } from "../constants/calendar";
