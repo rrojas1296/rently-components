@@ -1,6 +1,6 @@
 {
   "name": "rently-components",
-  "version": "0.1.23",
+  "version": "0.1.26",
   "type": "module",
   "description": "React component library for Rently",
   "keywords": [
@@ -32,6 +32,7 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.15",
     "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-switch": "^1.2.6",
     "class-variance-authority": "^0.7.1",

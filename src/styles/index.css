@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
   --color-bg-1: var(--bg-1);
   --color-bg-2: var(--bg-2);
@@ -36,4 +38,9 @@
     opacity: 1;
     scale: 1;
   }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-text-2) var(--color-bg-1);
 }

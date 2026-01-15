@@ -17,9 +17,9 @@ export const Default: Story = {
   render: () => {
     const [selected, setSelected] = useState<Date | undefined>(undefined);
     return (
-      <div>
+      <div className="flex flex-col gap-4">
         <Calendar selected={selected} setSelected={setSelected} />
-        <p>Selected: {selected?.toDateString()}</p>
+        <p className="text-center">Selected: {selected?.toDateString()}</p>
       </div>
     );
   },

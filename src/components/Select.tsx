@@ -1,6 +1,6 @@
 import { Select as RadixSelect } from "radix-ui";
 import { cn } from "../utils/cn";
-import { CheckIcon, ChevronDownIcon } from "lucide-react";
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 const SelectRoot = (props: RadixSelect.SelectProps) => {
   return <RadixSelect.Root {...props} />;
@@ -72,6 +72,7 @@ const SelectValue = ({ className, ...other }: RadixSelect.SelectValueProps) => {
 const SelectContent = ({
   children,
   className,
+  position = "popper",
   ...other
 }: RadixSelect.SelectContentProps) => {
   return (
@@ -79,14 +80,23 @@ const SelectContent = ({
       <RadixSelect.Content
         data-slot="select-content"
         className={cn(
-          "rounded-lg z-999 min-w-[var(--radix-select-trigger-width)] bg-bg-1 border border-border-2 data-[state=open]:animate-popover-in shadow-sm",
+          "rounded-lg z-999 overflow-y-auto min-w-[var(--radix-select-trigger-width)] bg-bg-1 border border-border-2 data-[state=open]:animate-popover-in shadow-sm",
+          "p-px",
+          position === "popper" &&
+            "max-h-82 w-full min-w-(--radix-select-trigger-width) scroll-my-1",
           className,
         )}
         sideOffset={8}
-        position="popper"
+        position={position}
         {...other}
       >
+        <RadixSelect.SelectScrollUpButton className="flex justify-center items-center">
+          <ChevronUpIcon className="w-5 h-5 text-text-2 " />
+        </RadixSelect.SelectScrollUpButton>
         <RadixSelect.Viewport>{children}</RadixSelect.Viewport>
+        <RadixSelect.SelectScrollDownButton className="flex justify-center items-center">
+          <ChevronDownIcon className="w-5 h-5 text-text-2 " />
+        </RadixSelect.SelectScrollDownButton>
       </RadixSelect.Content>
     </RadixSelect.Portal>
   );
@@ -94,7 +104,7 @@ const SelectContent = ({
 
 interface Props {
   options: { value: string; label: string }[];
-  placeholder: string;
+  placeholder?: string;
   onChange?: (value: string) => void;
   value?: string;
   error?: string;

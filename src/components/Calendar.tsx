@@ -18,9 +18,9 @@ interface Props {
   locale?: "en" | "es";
   selected?: Date | undefined;
   setSelected: (date: Date | undefined) => void;
-  rootClassName: string;
-  buttonDayClassName: string;
-  containerMonthDaysClassName: string;
+  rootClassName?: string;
+  buttonDayClassName?: string;
+  containerMonthDaysClassName?: string;
 }
 
 const Calendar = ({
@@ -44,7 +44,7 @@ const Calendar = ({
   return (
     <div
       className={cn(
-        "border-border-2 border py-3 px-4 bg-bg-1 rounded-lg",
+        "border-border-2 border py-3 px-4 bg-bg-1 rounded-lg w-fit",
         rootClassName,
       )}
     >
@@ -140,8 +140,7 @@ const Calendar = ({
               className={cn(
                 "text-center outline-none text-text-1 justify-self-center text-sm w-full justify-center w-8 h-8 font-normal",
                 !currentMonth && "text-text-2",
-                isToday &&
-                  "bg-gray-200 hover:bg-gray-300 text-text-1 font-medium",
+                isToday && "bg-bg-2 text-text-1 font-medium",
                 isSelected && "bg-primary-500 text-text-3 hover:bg-primary-400",
                 buttonDayClassName,
               )}
