@@ -48,7 +48,7 @@ const DatePicker = ({
           sideOffset={8}
           align="start"
           className={cn(
-            "p-2 border-border-2 rounded-lg border bg-bg-1 data-[state=open]:animate-popover-in",
+            "p-2 z-999 border-border-2 rounded-lg border bg-bg-1 data-[state=open]:animate-popover-in",
           )}
         >
           <Calendar

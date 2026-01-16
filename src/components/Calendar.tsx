@@ -69,7 +69,7 @@ const Calendar = ({
           className="border focus-within:ring-2 focus-within:ring-border-1/80 border-border-1 rounded-lg bg-bg-1 h-9 w-20 overflow-hidden flex gap-2 items-center relative"
         >
           <select
-            className="text-sm h-full w-full appearance-none px-2 outline-none border-none"
+            className="text-sm h-full w-full appearance-none px-2 outline-none border-none text-text-1 placeholder:text-text-2"
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(parseInt(e.target.value))}
           >
@@ -87,7 +87,7 @@ const Calendar = ({
           className="border focus-within:ring-2 focus-within:ring-border-1/80 border-border-1 rounded-lg bg-bg-1 h-9 w-20 overflow-hidden flex gap-2 items-center relative"
         >
           <select
-            className="text-sm h-full w-full appearance-none px-2 outline-none border-none"
+            className="text-sm h-full w-full appearance-none px-2 outline-none border-none text-text-1 placeholder:text-text-2"
             value={selectedYear}
             onChange={(e) => setSelectedYear(parseInt(e.target.value))}
           >

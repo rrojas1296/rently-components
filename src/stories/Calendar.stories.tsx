@@ -19,7 +19,7 @@ export const Default: Story = {
     return (
       <div className="flex flex-col gap-4">
         <Calendar selected={selected} setSelected={setSelected} />
-        <p className="text-center">Selected: {selected?.toDateString()}</p>
+        <p className="text-center">Selected: {selected?.toISOString()}</p>
       </div>
     );
   },

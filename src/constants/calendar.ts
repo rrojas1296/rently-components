@@ -1,4 +1,7 @@
 import dayjs, { Dayjs } from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 export interface CalendarDay {
   date: Dayjs;
@@ -6,36 +9,40 @@ export interface CalendarDay {
 }
 
 export const generateDays = (month: number, year: number) => {
-  const startMonth = dayjs().year(year).month(month).startOf("month");
-  const endMonth = dayjs().year(year).month(month).endOf("month");
+  const startMonth = dayjs.utc().year(year).month(month).startOf("month");
+  const endMonth = dayjs.utc().year(year).month(month).endOf("month");
 
   const startWeekDay = startMonth.day();
 
   const days: CalendarDay[] = [];
 
+  // Previous month days
   for (let i = 0; i < startWeekDay; i++) {
     days.push({
-      date: startMonth.subtract(startWeekDay - i, "day"),
+      date: startMonth.subtract(startWeekDay - i, "day").startOf("day"),
       currentMonth: false,
     });
   }
 
+  // Current month days
   for (let i = 1; i <= endMonth.date(); i++) {
     days.push({
-      date: dayjs().year(year).month(month).date(i),
+      date: dayjs.utc().year(year).month(month).date(i).startOf("day"),
       currentMonth: true,
     });
   }
 
+  // Next month days
   const totalDays = days.length;
   const remainingDays = 42 - totalDays;
 
   for (let i = 1; i <= remainingDays; i++) {
     days.push({
-      date: endMonth.add(i, "day"),
+      date: endMonth.add(i, "day").startOf("day"),
       currentMonth: false,
     });
   }
+
   return days;
 };
 
