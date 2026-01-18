@@ -44,7 +44,7 @@ const SelectTrigger = ({
         "data-[state=open]:ring-2 data-[state=open]:ring-border-1/80",
         className,
         error &&
-          "border-danger text-danger data-[slot=select-value]:text-danger/80",
+          "border-danger text-danger data-[slot=select-value]:text-danger data-placeholder:text-danger",
       )}
       aria-label="select-trigger"
       {...other}

@@ -12,7 +12,7 @@ const meta: Meta<typeof Input> = {
         type: "boolean",
       },
     },
-    containerClassName: {
+    inputClassName: {
       table: {
         disable: true,
       },
@@ -27,7 +27,6 @@ type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {
-    containerClassName: "",
     error: "",
     Icon: MailIcon,
   },
@@ -36,7 +35,7 @@ export const Default: Story = {
     return (
       <Input
         placeholder="Placeholder"
-        containerClassName="w-sm"
+        className="w-sm"
         error={error}
         Icon={Icon}
       />

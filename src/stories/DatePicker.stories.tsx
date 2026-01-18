@@ -1,29 +1,49 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import DatePicker from "../components/DatePicker";
 import withColorSchema from "../decorators/withColorSchema";
-import { useState } from "react";
+import { ComponentProps, useState } from "react";
 
 const meta: Meta<typeof DatePicker> = {
   title: "Components/DatePicker",
   component: DatePicker,
   decorators: [withColorSchema],
+  argTypes: {
+    setDate: {
+      type: "function",
+      table: {
+        disable: true,
+      },
+    },
+    placeholder: {
+      type: "string",
+    },
+    date: {
+      table: {
+        disable: true,
+      },
+    },
+    Icon: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof DatePicker>;
+type Story = StoryObj<Omit<ComponentProps<typeof DatePicker>, "setDate">>;
 
 export const Default: Story = {
-  render: () => {
-    const [selected, setSelected] = useState<Date | undefined>(undefined);
+  args: {
+    error: "",
+    placeholder: "Choose a date",
+  },
+  render: (args) => {
+    const [date, setDate] = useState<Date | undefined>(undefined);
 
     return (
-      <DatePicker
-        placeholder="Choose a date"
-        className="w-sm"
-        selected={selected}
-        setSelected={setSelected}
-      />
+      <DatePicker className="w-sm" date={date} setDate={setDate} {...args} />
     );
   },
 };

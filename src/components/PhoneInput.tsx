@@ -7,18 +7,32 @@ import Popover from "./Popover";
 
 interface Props {
   placeholder: string;
-  selected: string;
-  setSelected: (value: string) => void;
+  phone: string;
+  setPhone: (value: string) => void;
+  className?: string;
+  error?: string;
 }
 
-const PhoneInput = ({ placeholder, selected, setSelected }: Props) => {
+const PhoneInput = ({
+  placeholder,
+  phone,
+  setPhone,
+  error,
+  className,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const flag = COUNTRY_CODES.find(
-    (cc) => cc.code === selected.split(" ")[0],
+    (cc) => cc.code === phone.split(" ")[0],
   )?.flag;
 
   return (
-    <div className="border border-border-1 rounded-lg bg-bg-1 h-10 min-w-md flex overflow-hidden">
+    <div
+      className={cn(
+        "border border-border-1 rounded-lg bg-bg-1 h-10 flex overflow-hidden",
+        error && "border-danger",
+        className,
+      )}
+    >
       <Popover
         open={open}
         setOpen={setOpen}
@@ -35,13 +49,13 @@ const PhoneInput = ({ placeholder, selected, setSelected }: Props) => {
         }
       >
         {COUNTRY_CODES.map((cc) => {
-          const isSelected = cc.code === selected.split(" ")[0];
+          const isSelected = cc.code === phone.split(" ")[0];
           return (
             <div
               key={cc.code}
               onClick={() => {
-                const number = selected.split(" ")[1];
-                setSelected(`${cc.code} ${number}`);
+                const number = phone.split(" ")[1];
+                setPhone(`${cc.code} ${number}`);
                 setOpen(false);
               }}
               className={cn(
@@ -62,12 +76,13 @@ const PhoneInput = ({ placeholder, selected, setSelected }: Props) => {
 
       <Input
         placeholder={placeholder}
-        value={selected.split(" ")[1]}
+        value={phone.split(" ")[1]}
+        error={error}
         onChange={(e) => {
-          const code = selected.split(" ")[0];
-          setSelected(`${code} ${e.target.value}`);
+          const code = phone.split(" ")[0];
+          setPhone(`${code} ${e.target.value}`);
         }}
-        containerClassName="w-full border-none h-full focus-within:ring-0"
+        className="w-full border-none h-full focus-within:ring-0"
         type="number"
       />
     </div>

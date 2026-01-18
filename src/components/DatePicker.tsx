@@ -9,37 +9,42 @@ import "dayjs/locale/en";
 
 interface Props extends ComponentProps<"button"> {
   placeholder: string;
-  setSelected: (date: Date | undefined) => void;
-  selected?: Date | undefined;
+  setDate: (date: Date | undefined) => void;
+  date?: Date;
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   locale?: "en" | "es";
+  error?: string;
 }
 const DatePicker = ({
   placeholder,
   locale = "es",
   className,
   Icon,
-  selected,
-  setSelected,
+  date,
+  setDate,
+  error,
   ...props
 }: Props) => {
-  const formattedDate = dayjs(selected).locale(locale).format("DD-MM-YYYY");
+  const formattedDate = dayjs(date).utc().locale(locale).format("DD-MM-YYYY");
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
         <button
           className={cn(
             "h-10 px-3 flex items-center bg-bg-1 gap-3 rounded-lg border border-border-1 text-sm text-text-2 min-w-sm justify-between cursor-pointer",
-            selected && "text-text-1",
+            date && "text-text-1",
+            error && "border-danger text-danger",
             className,
           )}
           {...props}
         >
-          {selected ? formattedDate : placeholder}
+          {date ? formattedDate : placeholder}
           {Icon ? (
             <Icon className="text-text-2 w-5 h-5" />
           ) : (
-            <CalendarIcon className="text-text-2 w-5 h-5" />
+            <CalendarIcon
+              className={cn("text-text-2 w-5 h-5", error && "text-danger")}
+            />
           )}
         </button>
       </Popover.Trigger>
@@ -52,8 +57,9 @@ const DatePicker = ({
           )}
         >
           <Calendar
-            selected={selected}
-            setSelected={setSelected}
+            date={date}
+            setDate={setDate}
+            locale={locale}
             rootClassName="border-none p-0"
           />
         </Popover.Content>

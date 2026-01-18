@@ -7,7 +7,8 @@ export { default as Switch } from "./components/Switch";
 export { default as Badge } from "./components/Badge";
 export { default as Calendar } from "./components/Calendar";
 export { default as Dialog } from "./components/Dialog";
-export { default as Datepicker } from "./components/DatePicker";
+export { default as DatePicker } from "./components/DatePicker";
+export { default as PhoneInput } from "./components/PhoneInput";
 
 export type { BadgeType } from "./components/Badge";
 export type { Step } from "./components/Stepper";

@@ -16,8 +16,8 @@ import {
 
 interface Props {
   locale?: "en" | "es";
-  selected?: Date | undefined;
-  setSelected: (date: Date | undefined) => void;
+  date?: Date | undefined;
+  setDate: (date: Date | undefined) => void;
   rootClassName?: string;
   buttonDayClassName?: string;
   containerMonthDaysClassName?: string;
@@ -25,8 +25,8 @@ interface Props {
 
 const Calendar = ({
   locale = "en",
-  selected,
-  setSelected,
+  date,
+  setDate,
   rootClassName,
   buttonDayClassName,
   containerMonthDaysClassName,
@@ -128,15 +128,15 @@ const Calendar = ({
           </p>
         ))}
 
-        {days.map(({ date, currentMonth }) => {
-          const isToday = date.isSame(today, "day");
-          const isSelected = selected && date.isSame(dayjs(selected), "day");
+        {days.map(({ date: d, currentMonth }) => {
+          const isToday = d.isSame(today, "day");
+          const isSelected = date && d.isSame(dayjs(date), "day");
 
           return (
             <Button
               variant="ghost"
-              key={date.format("YYYY-MM-DD")}
-              onClick={() => setSelected(date.toDate())}
+              key={d.format("YYYY-MM-DD")}
+              onClick={() => setDate(d.toDate())}
               className={cn(
                 "text-center outline-none text-text-1 justify-self-center text-sm w-full justify-center w-8 h-8 font-normal",
                 !currentMonth && "text-text-2",
@@ -145,7 +145,7 @@ const Calendar = ({
                 buttonDayClassName,
               )}
             >
-              {date.date()}
+              {d.date()}
             </Button>
           );
         })}
