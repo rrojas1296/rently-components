@@ -25,7 +25,7 @@ const Popover = ({
         <RadixPopover.Content
           sideOffset={8}
           className={cn(
-            "animate-popover-in text-sm p-5 bg-bg-1 border border-border-2 rounded-lg",
+            "animate-popover-in text-sm p-5 bg-bg-1 border border-border-2 rounded-lg z-999",
             className,
           )}
           {...props}

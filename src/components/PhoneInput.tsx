@@ -59,14 +59,14 @@ const PhoneInput = ({
                 setOpen(false);
               }}
               className={cn(
-                "px-2 py-2 bg-bg-1 rounded-lg hover:bg-bg-2 justify-between items-center text-sm cursor-pointer flex",
+                "px-2 text-text-1 py-2 bg-bg-1 rounded-lg hover:bg-bg-2 justify-between items-center text-sm cursor-pointer flex",
                 isSelected && "bg-bg-2",
               )}
             >
               {
-                <span>
-                  {cc.flag} {cc.name}
-                </span>
+                <p>
+                  {cc.flag} {cc.name} {cc.code}
+                </p>
               }
               {isSelected && <CheckIcon className="w-3 h-3 text-text-2" />}
             </div>
