@@ -1,4 +1,9 @@
-import { type ComponentProps, type ComponentType, type SVGProps } from "react";
+import {
+  useState,
+  type ComponentProps,
+  type ComponentType,
+  type SVGProps,
+} from "react";
 import { cn } from "../utils/cn";
 import { CalendarIcon } from "lucide-react";
 import { Popover } from "radix-ui";
@@ -26,8 +31,9 @@ const DatePicker = ({
   ...props
 }: Props) => {
   const formattedDate = dayjs(date).utc().locale(locale).format("DD-MM-YYYY");
+  const [open, setOpen] = useState(false);
   return (
-    <Popover.Root>
+    <Popover.Root open={open} onOpenChange={setOpen}>
       <Popover.Trigger asChild>
         <button
           className={cn(
@@ -53,12 +59,15 @@ const DatePicker = ({
           sideOffset={8}
           align="start"
           className={cn(
-            "p-2 z-999 border-border-2 rounded-lg border bg-bg-1 data-[state=open]:animate-popover-in",
+            "p-2 z-999 border-border-2 rounded-lg border bg-bg-1 data-[state=open]:animate-popover-in data-[state=closed]:animate-popover-out",
           )}
         >
           <Calendar
             date={date}
-            setDate={setDate}
+            setDate={(date) => {
+              setDate(date);
+              setOpen(false);
+            }}
             locale={locale}
             rootClassName="border-none p-0"
           />

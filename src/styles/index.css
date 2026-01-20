@@ -26,7 +26,8 @@
   --color-bg-danger: var(--bg-danger);
   --color-bg-warning: var(--bg-warning);
 
-  --animate-popover-in: popOverIn 0.2s ease-in-out forwards;
+  --animate-popover-in: popOverIn 0.1s ease-in-out forwards;
+  --animate-popover-out: popOverOut 0.1s ease-in-out forwards;
   --animate-dialog-in: dialogIn 0.2s ease-out forwards;
   --animate-dialog-out: dialogOut 0.15s ease-in forwards;
   --animate-overlay-in: overlayIn 0.2s ease-out forwards;
@@ -41,6 +42,17 @@
   to {
     opacity: 1;
     scale: 1;
+  }
+}
+
+@keyframes popOverOut {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.9;
   }
 }
 
