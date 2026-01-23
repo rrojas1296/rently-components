@@ -11,6 +11,12 @@ export { default as DatePicker } from "./components/DatePicker";
 export { default as PhoneInput } from "./components/PhoneInput";
 export { default as Popover } from "./components/Popover";
 
+//DropdownMenu
+export { DropdownMenu } from "./components/DropdownMenu";
+export { DropdownMenuItem } from "./components/DropdownMenu";
+export { DropdownMenuTrigger } from "./components/DropdownMenu";
+export { DropdownMenuContent } from "./components/DropdownMenu";
+
 export type { BadgeType } from "./components/Badge";
 export type { Step } from "./components/Stepper";
 

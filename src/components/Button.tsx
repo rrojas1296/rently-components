@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../utils/cn";
 
 const variants = cva(
-  "h-10 px-3 text-sm justify-center flex items-center gap-3 rounded-lg cursor-pointer transition-[background-color] w-fit",
+  "h-10 px-3 text-sm justify-center flex items-center gap-3 rounded-lg cursor-pointer transition-[background-color] w-fit outline-none",
   {
     variants: {
       variant: {
@@ -17,7 +17,8 @@ const variants = cva(
 );
 
 interface Props
-  extends ComponentProps<"button">, VariantProps<typeof variants> {}
+  extends ComponentProps<"button">,
+    VariantProps<typeof variants> {}
 
 const Button = ({
   variant = "filled",
