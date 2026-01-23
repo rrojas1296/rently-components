@@ -36,14 +36,7 @@ export const Outlined: Story = {
 
 export const Icon: Story = {
   args: {
-    variant: "filled",
-    children: <PlusIcon className="w-5 h-5 text-black" />,
-  },
-  render: () => {
-    return (
-      <Button variant="icon">
-        <PlusIcon className="w-5 h-5 text-text-1" />
-      </Button>
-    );
+    variant: "icon",
+    children: <PlusIcon className="w-5 h-5" />,
   },
 };

@@ -9,6 +9,7 @@ export { default as Calendar } from "./components/Calendar";
 export { default as Dialog } from "./components/Dialog";
 export { default as DatePicker } from "./components/DatePicker";
 export { default as PhoneInput } from "./components/PhoneInput";
+export { default as Popover } from "./components/Popover";
 
 export type { BadgeType } from "./components/Badge";
 export type { Step } from "./components/Stepper";
