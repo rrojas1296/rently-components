@@ -17,6 +17,15 @@ export { DropdownMenuItem } from "./components/DropdownMenu";
 export { DropdownMenuTrigger } from "./components/DropdownMenu";
 export { DropdownMenuContent } from "./components/DropdownMenu";
 
+//Toast
+export { Toast } from "./components/Toast";
+export { ToastProvider } from "./components/Toast";
+export { ToastViewport } from "./components/Toast";
+export { ToastTitle } from "./components/Toast";
+export { ToastDescription } from "./components/Toast";
+export { ToastClose } from "./components/Toast";
+export { ToastAction } from "./components/Toast";
+
 export type { BadgeType } from "./components/Badge";
 export type { Step } from "./components/Stepper";
 

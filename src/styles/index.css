@@ -32,6 +32,8 @@
   --animate-dialog-out: dialogOut 0.15s ease-in forwards;
   --animate-overlay-in: overlayIn 0.2s ease-out forwards;
   --animate-overlay-out: overlayOut 0.15s ease-in forwards;
+  --animate-slide-in: slideIn 0.2s ease-out forwards;
+  --animate-hide: hide 0.15s ease-in forwards;
 }
 
 @keyframes popOverIn {
@@ -92,6 +94,26 @@
 }
 
 @keyframes overlayOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
   from {
     opacity: 1;
   }
