@@ -20,7 +20,6 @@ interface Props {
   IconHeader: ComponentType<SVGProps<SVGSVGElement>>;
   setOpen: (open: boolean) => void;
 }
-console.log("here");
 const SideNavigation = ({
   sections,
   containerClassName,
