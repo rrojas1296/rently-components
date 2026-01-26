@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Toast,
-  ToastClose,
   ToastDescription,
   ToastProvider,
   ToastTitle,
@@ -25,7 +24,7 @@ export const Default: Story = {
   render: () => {
     const [open, setOpen] = useState(false);
     return (
-      <ToastProvider duration={2000}>
+      <ToastProvider duration={20000}>
         <Button
           onClick={() => {
             setOpen(false);

@@ -26,13 +26,13 @@ const Toast = ({
   return (
     <RadixToast.Root
       className={cn(
-        "relative bg-bg-1 border border-border-2 rounded-lg px-5 py-2 text-sm text-text-1 max-w-sm min-w-xs min-h-12 shadow-md",
+        "relative bg-bg-1 border border-border-2 rounded-lg px-5 py-2 text-sm m-auto text-text-1 w-xs md:w-sm shadow-md",
         "data-[state=open]:animate-slide-in data-[state=closed]:animate-hide",
         className,
       )}
       {...props}
     >
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 shrink-0">
+      <div className="absolute left-5 top-1/2 -translate-y-1/2 shrink-0">
         {icons[toastType]}
       </div>
       {children}
@@ -47,7 +47,7 @@ const ToastViewport = ({
   return (
     <RadixToast.Viewport
       className={cn(
-        "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-5",
+        "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-5 w-full",
         className,
       )}
       {...props}
