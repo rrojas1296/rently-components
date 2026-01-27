@@ -1,6 +1,6 @@
-import Stepper from "../components/Stepper";
+import Stepper from "@/components/Stepper";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import withColorSchema from "../decorators/withColorSchema";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof Stepper> = {
   title: "Components/Stepper",

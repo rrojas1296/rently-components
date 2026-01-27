@@ -1,5 +1,5 @@
 import type { ComponentType, SVGProps } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 interface Option {
   label: string;

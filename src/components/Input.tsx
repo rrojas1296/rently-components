@@ -1,5 +1,5 @@
 import type { ComponentProps, ComponentType, SVGProps } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 interface Props extends ComponentProps<"input"> {
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;

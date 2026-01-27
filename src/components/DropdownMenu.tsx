@@ -1,5 +1,5 @@
 import { DropdownMenu as RadixDropdownMenu } from "radix-ui";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 const DropdownMenu = (props: RadixDropdownMenu.DropdownMenuProps) => {
   return <RadixDropdownMenu.Root {...props} />;

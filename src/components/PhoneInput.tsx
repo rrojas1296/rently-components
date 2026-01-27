@@ -2,7 +2,7 @@ import { useState } from "react";
 import { COUNTRY_CODES } from "../constants/countries";
 import Input from "./Input";
 import { CheckIcon, ChevronDownIcon } from "lucide-react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import Popover from "./Popover";
 
 interface Props {

@@ -4,13 +4,13 @@ import {
   type ComponentType,
   type SVGProps,
 } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import { CalendarIcon } from "lucide-react";
 import { Popover } from "radix-ui";
-import Calendar from "./Calendar";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
 import "dayjs/locale/en";
+import Calendar from "./Calendar";
 
 interface Props extends ComponentProps<"button"> {
   placeholder: string;

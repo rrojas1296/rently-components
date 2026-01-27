@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import PhoneInput from "../components/PhoneInput";
-import withColorSchema from "../decorators/withColorSchema";
-import { ComponentProps, useState } from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import PhoneInput from "@/components/PhoneInput";
+import withColorSchema from "@/decorators/withColorSchema";
+import { type ComponentProps, useState } from "react";
 
 const meta: Meta<typeof PhoneInput> = {
   title: "Components/PhoneInput",

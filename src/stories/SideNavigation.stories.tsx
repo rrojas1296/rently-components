@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import SideNavigation from "../components/SideNavigation";
+import SideNavigation from "@/components/SideNavigation";
 import {
   ChartBarIncreasing,
   LayoutDashboardIcon,
@@ -9,8 +9,8 @@ import {
   UsersIcon,
 } from "lucide-react";
 import { useState } from "react";
-import Button from "../components/Button";
-import withColorSchema from "../decorators/withColorSchema";
+import Button from "@/components/Button";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof SideNavigation> = {
   title: "Components/SideNavigation",

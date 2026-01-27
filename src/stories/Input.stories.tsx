@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Input from "../components/Input";
+import Input from "@/components/Input";
 import { MailIcon } from "lucide-react";
-import withColorSchema from "../decorators/withColorSchema";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof Input> = {
   title: "Components/Input",

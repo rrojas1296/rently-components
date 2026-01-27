@@ -1,5 +1,5 @@
 import { Fragment, type ComponentProps } from "react";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 export interface Step {
   label: string;

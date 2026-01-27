@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import withColorSchema from "../decorators/withColorSchema";
-import Button from "../components/Button";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import withColorSchema from "@/decorators/withColorSchema";
+import Button from "@/components/Button";
 import {
   DropdownMenu,
   DropdownMenuContent,

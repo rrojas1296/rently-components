@@ -1,5 +1,5 @@
 import { Toast as RadixToast } from "radix-ui";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import { AlertCircleIcon, CheckCircleIcon, XIcon } from "lucide-react";
 
 const ToastProvider = (props: RadixToast.ToastProviderProps) => {

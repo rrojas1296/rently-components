@@ -1,6 +1,6 @@
 import { memo, type ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 
 const variants = cva(
   "h-10 px-3 text-sm justify-center flex items-center gap-3 rounded-lg cursor-pointer transition-[background-color] w-fit outline-none",

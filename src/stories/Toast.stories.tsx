@@ -1,14 +1,14 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Toast,
   ToastDescription,
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "../components/Toast";
-import withColorSchema from "../decorators/withColorSchema";
-import Button from "../components/Button";
+} from "@/components/Toast";
 import { useState } from "react";
+import Button from "@/components/Button";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof Toast> = {
   title: "Components/Toast",

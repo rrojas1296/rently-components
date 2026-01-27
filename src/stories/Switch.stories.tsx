@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Switch from "../components/Switch";
-import withColorSchema from "../decorators/withColorSchema";
+import Switch from "@/components/Switch";
+import withColorSchema from "@/decorators/withColorSchema";
 import { useState } from "react";
 
 const meta: Meta<typeof Switch> = {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import withColorSchema from "../decorators/withColorSchema";
-import Select from "../components/Select";
+import withColorSchema from "@/decorators/withColorSchema";
+import Select from "@/components/Select";
 import { useState } from "react";
 
 const meta: Meta<typeof Select> = {

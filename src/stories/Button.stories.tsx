@@ -1,7 +1,7 @@
-import Button from "../components/Button";
+import Button from "@/components/Button";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PlusIcon } from "lucide-react";
-import withColorSchema from "../decorators/withColorSchema";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",

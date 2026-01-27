@@ -5,8 +5,8 @@ import {
   CAL_YEARS,
   generateDays,
   WEEK_DAYS,
-} from "../constants/calendar";
-import { cn } from "../utils/cn";
+} from "@/constants/calendar";
+import { cn } from "@/utils/cn";
 import dayjs from "dayjs";
 import {
   ChevronDownIcon,

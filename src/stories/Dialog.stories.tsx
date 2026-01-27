@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import Dialog from "../components/Dialog";
-import withColorSchema from "../decorators/withColorSchema";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import Dialog from "@/components/Dialog";
+import withColorSchema from "@/decorators/withColorSchema";
 import { useState } from "react";
 
 const meta: Meta<typeof Dialog> = {

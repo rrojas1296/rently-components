@@ -1,5 +1,5 @@
 import { Dialog as RadixDialog } from "radix-ui";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import { XIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 

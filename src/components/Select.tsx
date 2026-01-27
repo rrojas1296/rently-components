@@ -1,5 +1,5 @@
 import { Select as RadixSelect } from "radix-ui";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 
 const SelectRoot = (props: RadixSelect.SelectProps) => {

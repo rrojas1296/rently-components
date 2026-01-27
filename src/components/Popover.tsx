@@ -1,5 +1,5 @@
 import { Popover as RadixPopover } from "radix-ui";
-import { cn } from "../utils/cn";
+import { cn } from "@/utils/cn";
 import type { ComponentProps } from "react";
 
 interface Props extends ComponentProps<typeof RadixPopover.PopoverContent> {

@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import withColorSchema from "../decorators/withColorSchema";
-import Calendar from "../components/Calendar";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import withColorSchema from "@/decorators/withColorSchema";
+import Calendar from "@/components/Calendar";
 import { useState } from "react";
 
 const meta: Meta<typeof Calendar> = {
@@ -18,7 +18,7 @@ export const Default: Story = {
     const [selected, setSelected] = useState<Date | undefined>(undefined);
     return (
       <div className="flex flex-col gap-4">
-        <Calendar selected={selected} setSelected={setSelected} />
+        <Calendar date={selected} setDate={setSelected} />
         <p className="text-center">Selected: {selected?.toISOString()}</p>
       </div>
     );

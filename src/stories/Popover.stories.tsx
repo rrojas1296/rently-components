@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react-vite";
-import Popover from "../components/Popover";
-import Button from "../components/Button";
-import withColorSchema from "../decorators/withColorSchema";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import Popover from "@/components/Popover";
+import Button from "@/components/Button";
+import withColorSchema from "@/decorators/withColorSchema";
 
 const meta: Meta<typeof Popover> = {
   title: "Components/Popover",
