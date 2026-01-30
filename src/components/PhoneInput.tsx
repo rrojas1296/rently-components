@@ -24,6 +24,8 @@ const PhoneInput = ({
   error,
   className,
 }: Props) => {
+  const code = phone.split(" ")[0] || "";
+  const number = phone.split(" ")[1] || "";
   const flag = COUNTRY_CODES.find(
     (cc) => cc.code === phone.split(" ")[0],
   )?.flag;
@@ -38,9 +40,7 @@ const PhoneInput = ({
     >
       <Select
         value={phone.split(" ")[0]}
-        onValueChange={(code) =>
-          setPhone(`${code} ${phone.split(" ")[1] || ""}`)
-        }
+        onValueChange={(code) => setPhone(`${code} ${number}`)}
       >
         <SelectTrigger className="w-22 border-none outline-none data-[state=open]:ring-0">
           <SelectValue placeholder="+51">
@@ -48,24 +48,24 @@ const PhoneInput = ({
           </SelectValue>
         </SelectTrigger>
         <SelectContent className="w-52 max-w-none">
-          {COUNTRY_CODES.map(({ code, flag, name }) => {
-            const isSelected = code === phone.split(" ")[0];
+          {COUNTRY_CODES.map(({ code: c, flag, name }) => {
+            const isSelected = c === code;
             return (
               <SelectItem
-                value={code}
-                textValue={code}
-                key={code}
+                value={c}
+                key={c}
+                showIndicator={false}
                 className={cn(
                   "px-2 text-text-1 py-2 bg-bg-1 rounded-lg hover:bg-bg-2 items-center text-sm cursor-pointer",
                   isSelected && "bg-bg-2",
                 )}
               >
-                <div className="flex justify-between">
+                <div className="w-full flex items-center justify-between">
                   <p className="flex gap-2">
                     <span> {flag}</span>
                     <span> {name}</span>
                   </p>
-                  <p>{code}</p>
+                  <p>{c}</p>
                 </div>
               </SelectItem>
             );
@@ -75,10 +75,9 @@ const PhoneInput = ({
 
       <Input
         placeholder={placeholder}
-        value={phone.split(" ")[1]}
+        value={number}
         error={error}
         onChange={(e) => {
-          const code = phone.split(" ")[0];
           setPhone(`${code} ${e.target.value}`);
         }}
         className="w-full border-none h-full focus-within:ring-0"

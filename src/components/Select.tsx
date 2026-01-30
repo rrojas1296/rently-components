@@ -9,24 +9,27 @@ const Select = (props: RadixSelect.SelectProps) => {
 const SelectItem = ({
   children,
   className,
+  showIndicator = true,
   ...other
-}: RadixSelect.SelectItemProps) => {
+}: RadixSelect.SelectItemProps & { showIndicator?: boolean }) => {
   return (
     <RadixSelect.Item
       className={cn(
-        "text-sm px-3 py-2 rounded-lg bg-bg-1 text-text-1 cursor-pointer hover:bg-bg-2 outline-none",
+        "text-sm relative px-3 py-2 rounded-lg bg-bg-1 text-text-1 cursor-pointer hover:bg-bg-2 outline-none",
         className,
       )}
       {...other}
     >
-      <RadixSelect.ItemText asChild className="text-text-1 text-sm">
+      {showIndicator && (
+        <span className="absolute right-2 items-center justify-center">
+          <RadixSelect.ItemIndicator>
+            <CheckIcon className="w-4 h-4 text-text-2" />
+          </RadixSelect.ItemIndicator>
+        </span>
+      )}
+      <RadixSelect.ItemText className="text-text-1 text-sm">
         {children}
       </RadixSelect.ItemText>
-      <span className="absolute right-2 items-center justify-center">
-        <RadixSelect.ItemIndicator>
-          <CheckIcon className="w-4 h-4 text-text-2" />
-        </RadixSelect.ItemIndicator>
-      </span>
     </RadixSelect.Item>
   );
 };
