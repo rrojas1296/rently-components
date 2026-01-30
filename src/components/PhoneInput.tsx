@@ -1,9 +1,13 @@
-import { useState } from "react";
 import { COUNTRY_CODES } from "../constants/countries";
 import Input from "./Input";
-import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { cn } from "@/utils/cn";
-import Popover from "./Popover";
+import { Select } from "@/components/Select";
+import {
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./Select";
 
 interface Props {
   placeholder: string;
@@ -20,10 +24,10 @@ const PhoneInput = ({
   error,
   className,
 }: Props) => {
-  const [open, setOpen] = useState(false);
   const flag = COUNTRY_CODES.find(
     (cc) => cc.code === phone.split(" ")[0],
   )?.flag;
+  console.log({ phone });
 
   return (
     <div
@@ -33,46 +37,40 @@ const PhoneInput = ({
         className,
       )}
     >
-      <Popover
-        open={open}
-        setOpen={setOpen}
-        className="p-0 h-62 overflow-y-auto custom-scrollbar"
-        align="start"
-        Trigger={
-          <button
-            onClick={() => setOpen(true)}
-            className="h-full px-3 cursor-pointer flex gap-3 items-center outline-none hover:bg-bg-2"
-          >
-            {flag}
-            <ChevronDownIcon className="w-5 h-5 text-text-2" />
-          </button>
-        }
+      <Select
+        value={phone.split(" ")[0]}
+        onValueChange={(code) => setPhone(`${code} ${phone.split(" ")[1]}`)}
       >
-        {COUNTRY_CODES.map((cc) => {
-          const isSelected = cc.code === phone.split(" ")[0];
-          return (
-            <div
-              key={cc.code}
-              onClick={() => {
-                const number = phone.split(" ")[1];
-                setPhone(`${cc.code} ${number}`);
-                setOpen(false);
-              }}
-              className={cn(
-                "px-2 text-text-1 py-2 bg-bg-1 rounded-lg hover:bg-bg-2 justify-between items-center text-sm cursor-pointer flex",
-                isSelected && "bg-bg-2",
-              )}
-            >
-              {
-                <p>
-                  {cc.flag} {cc.name} {cc.code}
-                </p>
-              }
-              {isSelected && <CheckIcon className="w-3 h-3 text-text-2" />}
-            </div>
-          );
-        })}
-      </Popover>
+        <SelectTrigger className="w-22 border-none outline-none data-[state=open]:ring-0">
+          <SelectValue placeholder="+51">
+            <span>{flag}</span>
+          </SelectValue>
+        </SelectTrigger>
+        <SelectContent className="w-52 max-w-none">
+          {COUNTRY_CODES.map(({ code, flag, name }) => {
+            const isSelected = code === phone.split(" ")[0];
+            return (
+              <SelectItem
+                value={code}
+                textValue={code}
+                key={code}
+                className={cn(
+                  "px-2 text-text-1 py-2 bg-bg-1 rounded-lg hover:bg-bg-2 items-center text-sm cursor-pointer",
+                  isSelected && "bg-bg-2",
+                )}
+              >
+                <div className="flex justify-between">
+                  <p className="flex gap-2">
+                    <span> {flag}</span>
+                    <span> {name}</span>
+                  </p>
+                  <p>{code}</p>
+                </div>
+              </SelectItem>
+            );
+          })}
+        </SelectContent>
+      </Select>
 
       <Input
         placeholder={placeholder}

@@ -1,15 +1,29 @@
 export { default as Input } from "./components/Input";
-export { default as Select } from "./components/Select";
 export { default as SideNavigation } from "./components/SideNavigation";
 export { default as Stepper } from "./components/Stepper";
 export { default as Button } from "./components/Button";
 export { default as Switch } from "./components/Switch";
 export { default as Badge } from "./components/Badge";
 export { default as Calendar } from "./components/Calendar";
-export { default as Dialog } from "./components/Dialog";
 export { default as DatePicker } from "./components/DatePicker";
 export { default as PhoneInput } from "./components/PhoneInput";
-export { default as Popover } from "./components/Popover";
+
+//Select
+export { Select } from "./components/Select";
+export { SelectItem } from "./components/Select";
+export { SelectTrigger } from "./components/Select";
+export { SelectValue } from "./components/Select";
+export { SelectContent } from "./components/Select";
+
+//Popover
+export { Popover } from "./components/Popover";
+export { PopoverTrigger } from "./components/Popover";
+export { PopoverContent } from "./components/Popover";
+
+//Dialog
+export { Dialog } from "./components/Dialog";
+export { DialogTrigger } from "./components/Dialog";
+export { DialogContent } from "./components/Dialog";
 
 //DropdownMenu
 export { DropdownMenu } from "./components/DropdownMenu";

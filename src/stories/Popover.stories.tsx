@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import Popover from "@/components/Popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/Popover";
 import Button from "@/components/Button";
 import withColorSchema from "@/decorators/withColorSchema";
 
@@ -16,8 +16,13 @@ type Story = StoryObj<typeof Popover>;
 export const Default: Story = {
   render: () => {
     return (
-      <Popover Trigger={<Button variant="outlined">Trigger</Button>}>
-        <div>Content</div>
+      <Popover>
+        <PopoverTrigger>
+          <Button>Open Popover</Button>
+        </PopoverTrigger>
+        <PopoverContent>
+          <p>Content</p>
+        </PopoverContent>
       </Popover>
     );
   },

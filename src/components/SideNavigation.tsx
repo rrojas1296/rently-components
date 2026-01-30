@@ -16,6 +16,7 @@ interface Props {
   pathname: string;
   open: boolean;
   containerClassName?: string;
+  overlayClassName?: string;
   textHeader?: string;
   IconHeader: ComponentType<SVGProps<SVGSVGElement>>;
   setOpen: (open: boolean) => void;
@@ -27,12 +28,13 @@ const SideNavigation = ({
   open,
   textHeader,
   IconHeader,
+  overlayClassName,
   setOpen,
 }: Props) => {
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 inset-0 shrink-0 overflow-y-auto overflow-x-hidden z-999 transition-all",
+        "fixed top-0 left-0 inset-0 shrink-0 overflow-y-auto overflow-x-hidden z-50 transition-all",
         open
           ? "pointer-events-auto lg:w-72"
           : "pointer-events-none lg:pointer-events-auto lg:w-21",
@@ -41,8 +43,9 @@ const SideNavigation = ({
     >
       <div
         className={cn(
-          "bg-overlay w-full h-full transition-opacity lg:hidden",
+          "bg-overlay w-full h-full transition-opacity lg:hidden backdrop-blur-xs",
           open ? "opacity-100" : "opacity-0",
+          overlayClassName,
         )}
         onClick={() => setOpen(false)}
       />

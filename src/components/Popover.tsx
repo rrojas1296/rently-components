@@ -2,39 +2,33 @@ import { Popover as RadixPopover } from "radix-ui";
 import { cn } from "@/utils/cn";
 import type { ComponentProps } from "react";
 
-interface Props extends ComponentProps<typeof RadixPopover.PopoverContent> {
-  Trigger: React.ReactNode;
-  children?: React.ReactNode;
-  className?: string;
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
-}
+const Popover = ({ ...props }: RadixPopover.PopoverProps) => {
+  return <RadixPopover.Root {...props} />;
+};
 
-const Popover = ({
-  Trigger,
+const PopoverTrigger = (props: ComponentProps<typeof RadixPopover.Trigger>) => {
+  return <RadixPopover.Trigger {...props} />;
+};
+
+const PopoverContent = ({
   children,
   className,
-  open,
-  setOpen,
   ...props
-}: Props) => {
+}: ComponentProps<typeof RadixPopover.Content>) => {
   return (
-    <RadixPopover.Root open={open} onOpenChange={setOpen}>
-      <RadixPopover.Trigger asChild>{Trigger}</RadixPopover.Trigger>
-      <RadixPopover.Portal>
-        <RadixPopover.Content
-          sideOffset={8}
-          className={cn(
-            "animate-popover-in text-sm p-5 bg-bg-1 border border-border-2 rounded-lg z-999",
-            className,
-          )}
-          {...props}
-        >
-          {children}
-        </RadixPopover.Content>
-      </RadixPopover.Portal>
-    </RadixPopover.Root>
+    <RadixPopover.Portal {...props}>
+      <RadixPopover.Content
+        sideOffset={8}
+        className={cn(
+          "animate-popover-in text-sm p-5 bg-bg-1 border border-border-2 rounded-lg z-999",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </RadixPopover.Content>
+    </RadixPopover.Portal>
   );
 };
 
-export default Popover;
+export { Popover, PopoverTrigger, PopoverContent };

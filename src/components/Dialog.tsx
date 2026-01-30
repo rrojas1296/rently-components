@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 import { XIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 
-const DialogRoot = (props: RadixDialog.DialogProps) => {
+const Dialog = (props: RadixDialog.DialogProps) => {
   return <RadixDialog.Root {...props} />;
 };
 
@@ -110,58 +110,13 @@ const DialogClose = ({
   );
 };
 
-interface Props {
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  trigger?: React.ReactNode;
-  title?: string;
-  description?: string;
-  children?: React.ReactNode;
-  className?: string;
-  showClose?: boolean;
-  footer?: React.ReactNode;
-}
-
-const Dialog = ({
-  open,
-  onOpenChange,
-  trigger,
-  title,
-  description,
-  children,
-  className,
-  showClose = true,
-  footer,
-}: Props) => {
-  return (
-    <DialogRoot open={open} onOpenChange={onOpenChange}>
-      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
-      <DialogContent className={className}>
-        {showClose && <DialogClose />}
-        {(title || description) && (
-          <DialogHeader>
-            {title && <DialogTitle>{title}</DialogTitle>}
-            {description && (
-              <DialogDescription>{description}</DialogDescription>
-            )}
-          </DialogHeader>
-        )}
-        {children}
-        {footer && <DialogFooter>{footer}</DialogFooter>}
-      </DialogContent>
-    </DialogRoot>
-  );
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
 };
-
-Dialog.Root = DialogRoot;
-Dialog.Trigger = DialogTrigger;
-Dialog.Portal = DialogPortal;
-Dialog.Overlay = DialogOverlay;
-Dialog.Content = DialogContent;
-Dialog.Header = DialogHeader;
-Dialog.Footer = DialogFooter;
-Dialog.Title = DialogTitle;
-Dialog.Description = DialogDescription;
-Dialog.Close = DialogClose;
-
-export default Dialog;
