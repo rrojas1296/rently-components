@@ -18,7 +18,12 @@ export const Default: Story = {
     const [selected, setSelected] = useState<Date | undefined>(undefined);
     return (
       <div className="flex flex-col gap-4">
-        <Calendar date={selected} setDate={setSelected} />
+        <Calendar
+          date={selected}
+          setDate={setSelected}
+          disablePast
+          disableFuture
+        />
         <p className="text-center">Selected: {selected?.toISOString()}</p>
       </div>
     );

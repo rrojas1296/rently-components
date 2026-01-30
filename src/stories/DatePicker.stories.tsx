@@ -27,6 +27,12 @@ const meta: Meta<typeof DatePicker> = {
         disable: true,
       },
     },
+    disableFuture: {
+      type: "boolean",
+    },
+    disablePast: {
+      type: "boolean",
+    },
   },
 };
 
@@ -38,6 +44,8 @@ export const Default: Story = {
   args: {
     error: "",
     placeholder: "Choose a date",
+    disableFuture: false,
+    disablePast: false,
   },
   render: (args) => {
     const [date, setDate] = useState<Date | undefined>(undefined);

@@ -21,6 +21,8 @@ interface Props {
   rootClassName?: string;
   buttonDayClassName?: string;
   containerMonthDaysClassName?: string;
+  disableFuture?: boolean;
+  disablePast?: boolean;
 }
 
 const Calendar = ({
@@ -30,6 +32,8 @@ const Calendar = ({
   rootClassName,
   buttonDayClassName,
   containerMonthDaysClassName,
+  disableFuture,
+  disablePast,
 }: Props) => {
   const today = useMemo(() => dayjs(), []);
 
@@ -131,17 +135,22 @@ const Calendar = ({
         {days.map(({ date: d, currentMonth }) => {
           const isToday = d.isSame(today, "day");
           const isSelected = date && d.isSame(dayjs(date), "day");
+          let disabled = false;
+          if (disableFuture) disabled = d.isAfter(today, "day");
+          if (disablePast) disabled = d.isBefore(today, "day");
 
           return (
             <Button
               variant="ghost"
+              disabled={disabled}
               key={d.format("YYYY-MM-DD")}
               onClick={() => setDate(d.toDate())}
               className={cn(
-                "text-center outline-none text-text-1 justify-self-center text-sm w-full justify-center w-8 h-8 font-normal",
+                "text-center outline-none text-text-1 justify-self-center text-sm justify-center w-8 h-8 font-normal",
                 !currentMonth && "text-text-2",
-                isToday && "bg-bg-2 text-text-1 font-medium",
+                isToday && "bg-bg-2 text-primary-400 font-medium",
                 isSelected && "bg-primary-500 text-text-3 hover:bg-primary-400",
+                disabled && "text-text-2 hover:bg-bg-1",
                 buttonDayClassName,
               )}
             >

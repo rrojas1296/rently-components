@@ -19,6 +19,8 @@ interface Props extends ComponentProps<"button"> {
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   locale?: "en" | "es";
   error?: string;
+  disableFuture?: boolean;
+  disablePast?: boolean;
 }
 const DatePicker = ({
   placeholder,
@@ -28,6 +30,8 @@ const DatePicker = ({
   date,
   setDate,
   error,
+  disableFuture,
+  disablePast,
   ...props
 }: Props) => {
   const formattedDate = dayjs(date).utc().locale(locale).format("DD-MM-YYYY");
@@ -70,6 +74,8 @@ const DatePicker = ({
             }}
             locale={locale}
             rootClassName="border-none p-0"
+            disableFuture={disableFuture}
+            disablePast={disablePast}
           />
         </Popover.Content>
       </Popover.Portal>
