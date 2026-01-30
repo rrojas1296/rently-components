@@ -27,7 +27,6 @@ const PhoneInput = ({
   const flag = COUNTRY_CODES.find(
     (cc) => cc.code === phone.split(" ")[0],
   )?.flag;
-  console.log({ phone });
 
   return (
     <div
@@ -39,7 +38,9 @@ const PhoneInput = ({
     >
       <Select
         value={phone.split(" ")[0]}
-        onValueChange={(code) => setPhone(`${code} ${phone.split(" ")[1]}`)}
+        onValueChange={(code) =>
+          setPhone(`${code} ${phone.split(" ")[1] || ""}`)
+        }
       >
         <SelectTrigger className="w-22 border-none outline-none data-[state=open]:ring-0">
           <SelectValue placeholder="+51">
