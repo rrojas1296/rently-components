@@ -1,6 +1,6 @@
 {
   "name": "rently-components",
-  "version": "0.1.44",
+  "version": "0.1.45",
   "type": "module",
   "description": "React component library for Rently",
   "keywords": [

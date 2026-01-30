@@ -41,7 +41,7 @@ const SideNavigation = ({
     >
       <div
         className={cn(
-          "bg-overlay w-full h-full transition-opacity lg:hidden backdrop-blur-xs",
+          "bg-overlay w-full h-full transition-opacity lg:hidden",
           open ? "opacity-100" : "opacity-0",
         )}
         onClick={() => setOpen(false)}
