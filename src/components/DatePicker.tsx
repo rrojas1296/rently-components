@@ -44,6 +44,7 @@ const DatePicker = ({
             "h-10 px-3 flex items-center bg-bg-1 gap-3 rounded-lg border border-border-1 text-sm text-text-2 min-w-sm justify-between cursor-pointer",
             date && "text-text-1",
             error && "border-danger text-danger",
+            open && "ring-2 ring-border-3/80",
             className,
           )}
           {...props}

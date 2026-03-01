@@ -33,7 +33,7 @@ const PhoneInput = ({
   return (
     <div
       className={cn(
-        "border border-border-1 rounded-lg bg-bg-1 h-10 flex overflow-hidden",
+        "border border-border-1 rounded-lg bg-bg-1 h-10 flex overflow-hidden focus-within:ring-border-3 transition-shadow focus-within:ring-2",
         error && "border-danger",
         className,
       )}
@@ -42,9 +42,9 @@ const PhoneInput = ({
         value={phone.split(" ")[0]}
         onValueChange={(code) => setPhone(`${code} ${number}`)}
       >
-        <SelectTrigger className="w-22 border-none outline-none data-[state=open]:ring-0">
+        <SelectTrigger className="w-32 border-none outline-none data-[state=open]:ring-0">
           <SelectValue placeholder="+51">
-            <span>{flag}</span>
+            <span className="gap-2 flex">{flag + "        2  " + code}</span>
           </SelectValue>
         </SelectTrigger>
         <SelectContent className="w-52 max-w-none">

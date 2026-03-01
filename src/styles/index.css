@@ -12,6 +12,7 @@
 
   --color-border-1: var(--border-1);
   --color-border-2: var(--border-2);
+  --color-border-3: var(--border-3);
 
   --color-overlay: var(--overlay);
 
@@ -34,6 +35,15 @@
   --animate-overlay-out: overlayOut 0.15s ease-in forwards;
   --animate-slide-in: slideIn 0.2s ease-out forwards;
   --animate-hide: hide 0.15s ease-in forwards;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  @apply appearance-none m-0;
+}
+
+input[type="number"] {
+  @apply [appearance:textfield];
 }
 
 @keyframes popOverIn {

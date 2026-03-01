@@ -47,7 +47,7 @@ const ToastViewport = ({
   return (
     <RadixToast.Viewport
       className={cn(
-        "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-5 w-full",
+        "fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col p-5 w-full z-50",
         className,
       )}
       {...props}

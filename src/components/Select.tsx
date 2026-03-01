@@ -44,7 +44,7 @@ const SelectTrigger = ({
     <RadixSelect.Trigger
       className={cn(
         "bg-bg-1 *:data-[slot=select-value]:overflow-hidden whitespace-nowrap justify-between data-placeholder:text-text-2 text-text-1 flex items-center gap-3 rounded-lg text-sm cursor-pointer px-3 h-10 border border-border-1 outline-none",
-        "data-[state=open]:ring-2 data-[state=open]:ring-border-1/80",
+        "data-[state=open]:ring-2 data-[state=open]:ring-border-3/80 transition-shadow",
         error &&
           "border-danger text-danger data-[slot=select-value]:text-danger data-placeholder:text-danger",
         className,

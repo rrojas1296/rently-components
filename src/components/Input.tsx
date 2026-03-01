@@ -11,7 +11,7 @@ const Input = ({ Icon, error, inputClassName, className, ...other }: Props) => {
   return (
     <div
       className={cn(
-        "rounded-lg border-border-1 border flex justify-between items-center h-10 bg-bg-1 pr-3 focus-within:ring-border-1/80 focus-within:ring-2",
+        "rounded-lg border-border-1 border flex justify-between items-center h-10 bg-bg-1 pr-3 focus-within:ring-border-3 transition-shadow focus-within:ring-2",
         error && "border-danger focus-within:ring-danger/80",
         className,
       )}
