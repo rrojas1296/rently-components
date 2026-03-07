@@ -84,6 +84,7 @@ const SideNavigation = ({
                 </p>
                 {options.map(({ label, href, Icon, onClick }, i) => {
                   const isActive = pathname.startsWith(href);
+                  console.log(isActive);
                   return (
                     <button
                       key={i}
@@ -92,14 +93,14 @@ const SideNavigation = ({
                         "h-10 w-full group transition-all rounded-lg overflow-hidden text-sm text-text-2 px-3 cursor-pointer flex items-center gap-3",
                         "hover:text-text-1",
                         isActive &&
-                          "bg-primary-500 text-text-3 hover:text-text-3",
+                          "bg-bg-3 text-primary-400 hover:text-text-3",
                         open ? "w-full" : "w-11",
                       )}
                     >
                       <Icon
                         className={cn(
-                          "w-5 h-5 text-text-2 group-hover:text-text-1 transition-colors shrink-0",
-                          isActive && "text-text-3 group-hover:text-text-3",
+                          "w-5 h-5 group-hover:text-text-1 transition-colors shrink-0",
+                          isActive && "group-hover:text-text-3",
                         )}
                       />
                       <p
