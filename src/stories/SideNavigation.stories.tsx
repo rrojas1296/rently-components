@@ -25,6 +25,7 @@ type Story = StoryObj<typeof SideNavigation>;
 export const Default: Story = {
   args: {
     pathname: "/dashboard/users",
+    open: true,
     sections: [
       {
         id: 1,

@@ -89,8 +89,8 @@ const SideNavigation = ({
                       key={i}
                       onClick={onClick}
                       className={cn(
-                        "h-10 w-full group transition-[width] rounded-lg overflow-hidden text-sm text-text-2 px-3 cursor-pointer flex items-center gap-3",
-                        "hover:text-text-1 transition-[color]",
+                        "h-10 w-full group transition-all rounded-lg overflow-hidden text-sm text-text-2 px-3 cursor-pointer flex items-center gap-3",
+                        "hover:text-text-1",
                         isActive &&
                           "bg-primary-500 text-text-3 hover:text-text-3",
                         open ? "w-full" : "w-11",
