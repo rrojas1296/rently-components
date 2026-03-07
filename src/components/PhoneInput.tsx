@@ -29,22 +29,17 @@ const PhoneInput = ({
   const flag = COUNTRY_CODES.find(
     (cc) => cc.code === phone.split(" ")[0],
   )?.flag;
+  const v = `${flag} ${code}`;
 
   return (
-    <div
-      className={cn(
-        "border border-border-1 rounded-lg bg-bg-1 h-10 flex overflow-hidden focus-within:ring-border-3 transition-shadow focus-within:ring-2",
-        error && "border-danger",
-        className,
-      )}
-    >
+    <div className={cn("flex gap-5", className)}>
       <Select
         value={phone.split(" ")[0]}
         onValueChange={(code) => setPhone(`${code} ${number}`)}
       >
-        <SelectTrigger className="w-32 border-none outline-none data-[state=open]:ring-0">
+        <SelectTrigger error={error} className="w-30">
           <SelectValue placeholder="+51">
-            <span className="gap-2 flex">{flag + " " + code}</span>
+            <span className="gap-2 flex">{v}</span>
           </SelectValue>
         </SelectTrigger>
         <SelectContent className="w-52 max-w-none">
@@ -80,7 +75,7 @@ const PhoneInput = ({
         onChange={(e) => {
           setPhone(`${code} ${e.target.value}`);
         }}
-        className="w-full border-none h-full focus-within:ring-0"
+        className="flex-1"
         type="number"
       />
     </div>

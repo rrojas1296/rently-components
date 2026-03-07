@@ -40,15 +40,17 @@ export const Default: Story = {
     error: "Has error",
     placeholder: "Enter a phone number",
   },
-  render: () => {
+  render: (args) => {
     const [value, setValue] = useState("+51");
+    const { error } = args;
     return (
       <div className="flex flex-col gap-2">
         <PhoneInput
           phone={value}
+          error={error}
           placeholder="999999999"
           setPhone={setValue}
-          className="w-sm"
+          className="w-md"
         />
         <p className="text-sm text-center">Selected: {value}</p>
       </div>

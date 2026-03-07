@@ -16,6 +16,6 @@ body {
 }
 
 html.dark {
-  background-color: var(--bg-2);
+  background-color: var(--bg-1);
   color-scheme: dark;
 }
