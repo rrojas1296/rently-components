@@ -44,7 +44,7 @@ const PhoneInput = ({
       >
         <SelectTrigger className="w-32 border-none outline-none data-[state=open]:ring-0">
           <SelectValue placeholder="+51">
-            <span className="gap-2 flex">{flag + "        2  " + code}</span>
+            <span className="gap-2 flex">{flag + " " + code}</span>
           </SelectValue>
         </SelectTrigger>
         <SelectContent className="w-52 max-w-none">
